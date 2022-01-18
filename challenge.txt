@@ -1,4 +1,4 @@
-Hi Pawel,
+ Hi Pawel,
 
 the msql commands that I'd entered, up until you provided the solutions:
 
