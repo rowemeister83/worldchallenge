@@ -1,0 +1,53 @@
+Hi Pawel,
+
+the msql commands that I'd entered, up until you provided the solutions:
+
+use world;
+show tables;
+
+describe city; 
+
+select * from country;
+
+#1
+SELECT * from CITY;
+Select count(CountryCode) FROM city WHERE CountryCode="usa";
+#answer is 274
+
+select * from country;
+
+#2
+Select population FROM country WHERE name="argentina";
+Select lifeexpectancy FROM country WHERE name="argentina";
+#answer is 37032000/75.1
+
+#3
+Select * from country where lifeexpectancy IS NOT NULL order by lifeexpectancy desc limit 1;
+#answer is andorra
+
+#4
+select co.name, ci.name from country co join city ci on co.capital = ci.id where co.name = 'Spain';
+#result is madrid
+
+#5
+
+SELECT Language FROM countrylanguage cl JOIN country c on cl.COUNTRYCODE=c.CODE WHERE Region='Southeast Asia';
+#20 total
+
+#6
+SELECT * FROM city WHERE name LIKE 'f%'LIMIT 25;
+#25 total results 
+
+#7 
+SELECT count(CountryCode) from city c JOIN country ct on ct.CODE=c.COUNTRYCODE WHERE Code='CHN';
+#answer is 363
+
+#8
+SELECT name, Population FROM COUNTRY WHERE Population=(SELECT MIN(population) FROM COUNTRY WHERE population>0);
+
+#9
+SELECT count(name) FROM country;
+#answer is 239
+
+#10
+SELECT NAME, population, surfacearea,(population/surfacearea)
